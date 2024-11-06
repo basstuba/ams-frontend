@@ -1,53 +1,53 @@
 <template>
-  <div class="main">
-    <Time />
-    <div class="user-message">{{ $auth.user.name }}さんお疲れ様です</div>
-    <Button
-      :work="work"
-      :rest="rest"
-      @update-work="updateWork"
-      @update-break="updateBreak"
-    />
-  </div>
+	<div class="main">
+		<Time />
+		<div class="user-message">{{ $auth.user.name }}さんお疲れ様です</div>
+		<Button
+		:work="work"
+		:rest="rest"
+		@update-work="updateWork"
+		@update-break="updateBreak"
+		/>
+	</div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      work: {
-        work_start: null,
-        work_end: null
-      },
-      rest: {
-        break_start: null,
-        break_end: null
-      },
-    };
-  },
-  methods: {
-    async getWorkData() {
-      const { data } = await this.$axios.post('http://localhost/api/auth/work_index', {
-        user_id: this.$auth.user.id,
-      });
-      this.work = data.work;
-    },
-    async getRestData() {
-      const { data } = await this.$axios.post('http://localhost/api/auth/break_index', {
-        user_id: this.$auth.user.id,
-      });
-      this.rest = data.rest;
-    },
-    updateWork(newWork) {
-      this.work = newWork;
-    },
-    updateBreak(newBreak) {
-      this.rest = newBreak;
-    },
-  },
-  created() {
-    this.getWorkData();
-    this.getRestData();
-  }
+	data() {
+		return {
+		work: {
+			work_start: null,
+			work_end: null
+		},
+		rest: {
+			break_start: null,
+			break_end: null
+		},
+		};
+	},
+	methods: {
+		async getWorkData() {
+		const { data } = await this.$axios.post('http://localhost/api/auth/work_index', {
+			user_id: this.$auth.user.id,
+		});
+		this.work = data.work;
+		},
+		async getRestData() {
+		const { data } = await this.$axios.post('http://localhost/api/auth/break_index', {
+			user_id: this.$auth.user.id,
+		});
+		this.rest = data.rest;
+		},
+		updateWork(newWork) {
+		this.work = newWork;
+		},
+		updateBreak(newBreak) {
+		this.rest = newBreak;
+		},
+	},
+	created() {
+		this.getWorkData();
+		this.getRestData();
+	}
 };
 </script>

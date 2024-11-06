@@ -1,12 +1,15 @@
 <template>
     <div class="button">
         <div class="content-message">{{ message }}</div>
-        <div class="first-button" v-if="!work.work_start && !work.work_end">
+        <div class="first-button" v-if="(work.work_start && work.work_end) || (!work.work_start && !work.work_end)">
             <button class="work-start" @click="workStart">勤務開始</button>
         </div>
         <div class="second-button" v-else>
-            <button class="break-start" v-if="!rest.break_start && !rest.break_end" @click="breakStart">休憩開始</button>
-            <button class="break-end" v-else @click="breakEnd">休憩終了</button>
+            <button class="break-start" @click="breakStart"
+                v-if="(rest.break_start && rest.break_end) || (!rest.break_start && !rest.break_end)">
+                休憩開始
+            </button>
+            <button class="break-end" @click="breakEnd" v-else>休憩終了</button>
             <button class="work-end" @click="workEnd">勤務終了</button>
         </div>
     </div>
