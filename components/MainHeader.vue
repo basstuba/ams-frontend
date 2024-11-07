@@ -30,3 +30,20 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.header {
+    background-color: #ABE0D3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.link-register,
+.link-login {
+    text-decoration: none;
+    color: #000;
+    margin: 0 0.5rem;
+}
+</style>

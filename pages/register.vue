@@ -9,7 +9,7 @@
                         <input class="item-input" type="text" v-model="name" placeholder="name" name="お名前"
                             autocomplete="name" />
                     </div>
-                    <div class="error">{{ errors[0] }}</div>
+                    <div class="error">{{ errors[0] }}&emsp;</div>
                 </validation-provider>
                 <validation-provider v-slot="{ errors }" rules="required|email">
                     <div class="register-item">
@@ -17,7 +17,7 @@
                         <input class="item-input" type="email" v-model="email" placeholder="email" name="メールアドレス"
                             autocomplete="email" />
                     </div>
-                    <div class="error">{{ errors[0] }}</div>
+                    <div class="error">{{ errors[0] }}&emsp;</div>
                 </validation-provider>
                 <validation-provider v-slot="{ errors }" rules="required|min:8">
                     <div class="register-item">
@@ -25,7 +25,7 @@
                         <input class="item-input" type="text" v-model="password" placeholder="password" name="パスワード"
                             autocomplete="current-password" />
                     </div>
-                    <div class="error">{{ errors[0] }}</div>
+                    <div class="error">{{ errors[0] }}&emsp;</div>
                 </validation-provider>
                 <button class="register-button" type="submit">登録</button>
             </form>
