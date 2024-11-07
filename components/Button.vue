@@ -1,6 +1,6 @@
 <template>
     <div class="button">
-        <div class="content-message">{{ message }}</div>
+        <div class="content-message">&emsp;{{ message }}</div>
         <div class="first-button" v-if="(work.work_start && work.work_end) || (!work.work_start && !work.work_end)">
             <button class="work-start" @click="workStart">勤務開始</button>
         </div>
@@ -96,3 +96,25 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.content-message {
+    font-size: x-large;
+}
+
+.first-button,
+.second-button {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.work-start {
+    width: 30%;
+    background-color: #A2CEFA;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    font-size: 3rem;
+    padding: 2rem 0;
+}
+</style>

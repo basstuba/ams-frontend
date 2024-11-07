@@ -46,4 +46,10 @@ export default {
     color: #000;
     margin: 0 0.5rem;
 }
+
+.logout {
+    border: none;
+    background-color: #ABE0D3;
+    cursor: pointer;
+}
 </style>

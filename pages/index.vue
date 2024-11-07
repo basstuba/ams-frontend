@@ -15,34 +15,34 @@
 export default {
 	data() {
 		return {
-		work: {
-			work_start: null,
-			work_end: null
-		},
-		rest: {
-			break_start: null,
-			break_end: null
-		},
+			work: {
+				work_start: '',
+				work_end: ''
+			},
+			rest: {
+				break_start: '',
+				break_end: ''
+			},
 		};
 	},
 	methods: {
 		async getWorkData() {
-		const { data } = await this.$axios.post('http://localhost/api/auth/work_index', {
-			user_id: this.$auth.user.id,
-		});
-		this.work = data.work;
+			const { data } = await this.$axios.post('http://localhost/api/auth/work_index', {
+				user_id: this.$auth.user.id,
+			});
+			this.work = data.work;
 		},
 		async getRestData() {
-		const { data } = await this.$axios.post('http://localhost/api/auth/break_index', {
-			user_id: this.$auth.user.id,
-		});
-		this.rest = data.rest;
+			const { data } = await this.$axios.post('http://localhost/api/auth/break_index', {
+				user_id: this.$auth.user.id,
+			});
+			this.rest = data.rest;
 		},
 		updateWork(newWork) {
-		this.work = newWork;
+			this.work = newWork;
 		},
 		updateBreak(newBreak) {
-		this.rest = newBreak;
+			this.rest = newBreak;
 		},
 	},
 	created() {
@@ -51,3 +51,14 @@ export default {
 	}
 };
 </script>
+
+<style scoped>
+.main {
+	text-align: center;
+}
+
+.user-message {
+	font-size: xx-large;
+	margin-bottom: 1rem;
+}
+</style>

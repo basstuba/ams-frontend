@@ -25,3 +25,10 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.time {
+    color: #4F546C;
+    font-size: 8rem;
+}
+</style>
