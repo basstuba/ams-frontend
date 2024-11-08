@@ -117,4 +117,27 @@ export default {
     font-size: 3rem;
     padding: 2rem 0;
 }
+
+.break-start,
+.break-end {
+    display: block;
+    width: 30%;
+    background-color: #DBF1CE;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    font-size: 3rem;
+    padding: 1rem;
+    margin: 0 auto 2rem;
+}
+
+.work-end {
+    width: 30%;
+    background-color: #A2CEFA;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    font-size: 3rem;
+    padding: 1rem 0;
+}
 </style>

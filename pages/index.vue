@@ -59,6 +59,6 @@ export default {
 
 .user-message {
 	font-size: xx-large;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 }
 </style>
