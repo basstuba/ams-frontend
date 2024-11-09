@@ -42,7 +42,7 @@ export default {
                         password: this.password,
                     },
                 });
-                this.$router.push('/');
+                this.$router.push(this.$auth.user.role === 'admin' ? '/admin' : '/');
             } catch (error) {
                 if (error.response && error.response.data && error.response.data.error) {
                     alert(`エラーが発生しました: ${error.response.data.error}`);
