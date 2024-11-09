@@ -27,16 +27,32 @@ export default {
 	},
 	methods: {
 		async getWorkData() {
-			const { data } = await this.$axios.post('http://localhost/api/auth/work_index', {
-				user_id: this.$auth.user.id,
-			});
-			this.work = data.work;
+			try {
+				const { data } = await this.$axios.post('http://localhost/api/auth/work_index', {
+					user_id: this.$auth.user.id,
+				});
+				this.work = data.work;
+			} catch (error) {
+				if (error.response && error.response.data && error.response.data.error) {
+					alert(`勤務時間の取得に失敗しました: ${error.response.data.error}`);
+				} else {
+					alert('予期せぬエラーが発生しました');
+				}
+			}
 		},
 		async getRestData() {
-			const { data } = await this.$axios.post('http://localhost/api/auth/break_index', {
-				user_id: this.$auth.user.id,
-			});
-			this.rest = data.rest;
+			try {
+				const { data } = await this.$axios.post('http://localhost/api/auth/break_index', {
+					user_id: this.$auth.user.id,
+				});
+				this.rest = data.rest;
+			} catch (error) {
+				if (error.response && error.response.data && error.response.data.error) {
+					alert(`休憩時間の取得に失敗しました: ${error.response.data.error}`);
+				} else {
+					alert('予期せぬエラーが発生しました');
+				}
+			}
 		},
 		updateWork(newWork) {
 			this.work = newWork;

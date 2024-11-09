@@ -24,7 +24,7 @@ export default {
                 this.$router.push('/login');
             } catch (error) {
                 const errorMessage = error.message || "予期せぬエラーが発生しました。再度お試しください。";
-                alert(`エラーが発生しました: ${errorMessage}`);
+                alert(`ログアウトに失敗しました: ${errorMessage}`);
             }
         },
     },
