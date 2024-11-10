@@ -12,14 +12,14 @@ export default {
             type: Array,
             required: true,
         },
-        exportDayData: {
+        exportDate: {
             type: String,
             required: true,
         }
     },
     methods: {
         outputExcel() {
-            const fileName = `${this.exportDayData}.xlsx`;
+            const fileName = `${this.exportDate}.xlsx`;
             exportToExcel(this.exportWorkData, fileName);
         },
     },

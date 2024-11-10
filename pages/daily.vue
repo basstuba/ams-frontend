@@ -2,7 +2,7 @@
     <div class="daily">
         <h2 class="daily-title">日付別勤怠一覧</h2>
         <div class="export">
-            <Export :exportDayData="on_the_day" :exportWorkData="works" />
+            <Export :exportDate="onTheDay" :exportWorkData="filteredWorks" />
         </div>
         <div class="search">
             <div class="search-date__before">
@@ -28,7 +28,7 @@
                 <td class="item-detail">{{ work.work_end }}</td>
                 <td class="item-detail">{{ work.break_total }}</td>
                 <td class="item-detail">
-                    <Modal :rests="work.rests" />
+                    <Modal :modalRestsData="work.rests" />
                 </td>
                 <td class="item-detail">{{ work.work_time }}</td>
             </tr>
@@ -41,15 +41,16 @@ export default {
     layout: 'another',
     data() {
         return {
-            on_the_day: null,
-            day_before: null,
-            day_after: null,
-            works: []
+            onTheDay: null,
+            dayBefore: null,
+            dayAfter: null,
+            works: [],
+            filteredWorks: [],
         };
     },
     computed: {
         formattedDate() {
-            const [year, month, day] = this.on_the_day.split('-');
+            const [year, month, day] = this.onTheDay.split('-');
             return `${parseInt(month)}月${parseInt(day)}日`;
         },
     },
@@ -57,10 +58,11 @@ export default {
         async getDailyData() {
             try {
                 const { data } = await this.$axios.get('http://localhost/api/auth/yesterday');
-                this.on_the_day = data.on_the_day;
-                this.day_before = data.day_before;
-                this.day_after = data.day_after;
+                this.onTheDay = data.on_the_day;
+                this.dayBefore = data.day_before;
+                this.dayAfter = data.day_after;
                 this.works = data.works;
+                this.getFilteredWorksData();
             } catch (error) {
                 if (error.response && error.response.data && error.response.data.error) {
                     alert(`勤怠一覧の取得に失敗しました: ${error.response.data.error}`);
@@ -74,10 +76,11 @@ export default {
                 const { data } = await this.$axios.post('http://localhost/api/auth/day_before', {
                     day_before: this.day_before,
                 });
-                this.on_the_day = data.on_the_day;
-                this.day_before = data.day_before;
-                this.day_after = data.day_after;
+                this.onTheDay = data.on_the_day;
+                this.dayBefore = data.day_before;
+                this.dayAfter = data.day_after;
                 this.works = data.works;
+                this.getFilteredWorksData();
             } catch (error) {
                 if (error.response && error.response.data && error.response.data.error) {
                     alert(`勤怠一覧の取得に失敗しました: ${error.response.data.error}`);
@@ -91,10 +94,11 @@ export default {
                 const { data } = await this.$axios.post('http://localhost/api/auth/day_after', {
                     day_after: this.day_after,
                 });
-                this.on_the_day = data.on_the_day;
-                this.day_before = data.day_before;
-                this.day_after = data.day_after;
+                this.onTheDay = data.on_the_day;
+                this.dayBefore = data.day_before;
+                this.dayAfter = data.day_after;
                 this.works = data.works;
+                this.getFilteredWorksData();
             } catch (error) {
                 if (error.response && error.response.data && error.response.data.error) {
                     alert(`勤怠一覧の取得に失敗しました: ${error.response.data.error}`);
@@ -102,6 +106,16 @@ export default {
                     alert('予期せぬエラーが発生しました');
                 }
             }
+        },
+        getFilteredWorksData() {
+            const filteredData = this.works.map(work => ({
+                name: work.user.name,
+                workStart: work.work_start,
+                workEnd: work.work_end,
+                breakTotal: work.break_total,
+                workTime: work.work_time
+            }));
+            this.filteredWorks = filteredData;
         },
     },
     created() {
