@@ -103,6 +103,7 @@ export default {
     font-size: x-large;
     padding: 0.3rem 3rem;
     margin-top: 1rem;
+    cursor: pointer;
 }
 
 .error {

@@ -29,3 +29,31 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.header {
+    background-color: #FFEACE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-admin {
+    text-decoration: none;
+    color: #000;
+}
+
+.logout {
+    background-color: #FFEACE;
+    border: none;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+</style>

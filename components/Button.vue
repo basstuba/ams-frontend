@@ -116,6 +116,7 @@ export default {
     box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
     font-size: 3rem;
     padding: 2rem 0;
+    cursor: pointer;
 }
 
 .break-start,
@@ -129,6 +130,7 @@ export default {
     font-size: 3rem;
     padding: 1rem;
     margin: 0 auto 2rem;
+    cursor: pointer;
 }
 
 .work-end {
@@ -139,5 +141,6 @@ export default {
     box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
     font-size: 3rem;
     padding: 1rem 0;
+    cursor: pointer;
 }
 </style>
