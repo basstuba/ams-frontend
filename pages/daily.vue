@@ -2,7 +2,7 @@
     <div class="daily">
         <h2 class="daily-title">日付別勤怠一覧</h2>
         <div class="export">
-            <Export :works="works" />
+            <Export :exportDayData="on_the_day" :exportWorkData="works" />
         </div>
         <div class="search">
             <div class="search-date__before">
@@ -28,7 +28,7 @@
                 <td class="item-detail">{{ work.work_end }}</td>
                 <td class="item-detail">{{ work.break_total }}</td>
                 <td class="item-detail">
-                    <Modal :rests=work.rests />
+                    <Modal :rests="work.rests" />
                 </td>
                 <td class="item-detail">{{ work.work_time }}</td>
             </tr>
