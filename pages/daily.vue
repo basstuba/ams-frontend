@@ -1,7 +1,7 @@
 <template>
     <div class="daily">
         <h2 class="daily-title">日付別勤怠一覧</h2>
-        <div class="export">
+        <div class="export-component">
             <Export :exportDate="onTheDay" :exportWorkData="filteredWorks" />
         </div>
         <div class="search">
@@ -33,7 +33,9 @@
                 <td class="item-detail">{{ work.work_time }}</td>
             </tr>
         </table>
-        <Modal v-if="isModalOpen" :modalRestsData="selectedRests" @close="isModalOpen = false" />
+        <div class="modal-component">
+            <Modal v-if="isModalOpen" :modalRestsData="selectedRests" @close="isModalOpen = false" />
+        </div>
     </div>
 </template>
 
@@ -134,3 +136,79 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.daily {
+    text-align: center;
+    padding: 2rem;
+}
+
+.daily-title {
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+.export-component {
+    text-align: right;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.search-date__before,
+.search-date__after {
+    text-align: center;
+}
+
+.before-icon,
+.after-icon {
+    width: 30%;
+    display: inline;
+    cursor: pointer;
+}
+
+.search-date {
+    font-size: xx-large;
+}
+
+.daily-table {
+    width: 70%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.title-name {
+    width: 15%;
+    color: #63594F;
+    font-size: x-large;
+    text-align: left;
+}
+
+.item-detail {
+    font-size: x-large;
+    text-align: left;
+    border-bottom: 0.1rem solid #94816A;
+    padding: 0.5rem 0;
+}
+
+.modal-open {
+    color: #63594F;
+    background-color: #FFD49F;
+    border: none;
+    border-radius: 0.8rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    padding: 0.1rem 1rem;
+    cursor: pointer;
+}
+
+.modal-component {
+    width: 25%;
+    position: fixed;
+    top: 15rem;
+    right: 5rem;
+}
+</style>

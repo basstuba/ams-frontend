@@ -26,3 +26,44 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.modal {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.3rem 0.3rem #8d8d8d;
+    text-align: right;
+    padding: 1rem;
+}
+
+.modal-button__close {
+    color: #63594F;
+    background-color: #FFD49F;
+    border: none;
+    border-radius: 0.8rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    padding: 0.1rem 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.modal-table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.title-name {
+    color: #63594F;
+    font-size: larger;
+    text-align: left;
+}
+
+.item-detail {
+    font-size: large;
+    text-align: left;
+    border-bottom: 0.1rem solid #94816A;
+    padding: 0.5rem 0;
+}
+</style>
