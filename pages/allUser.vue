@@ -2,7 +2,7 @@
     <div class="all-user">
         <h2 class="all-user__title">個人別勤怠一覧</h2>
         <div class="search">
-            <input class="search-input" type="text">
+            <input class="search-input" type="text" v-model="keyword" placeholder="名前で検索">
         </div>
         <table class="all-user__table">
             <tr class="data-title">
@@ -16,7 +16,8 @@
             </tr>
         </table>
         <div class="pagination">
-            <paginate :page-count="getPageCount" :page-range="3" :margin-pages="2" :prev-text="'&lt;'"
+            <paginate v-if="(getPageCount > 1)"
+                :page-count="getPageCount" :page-range="3" :margin-pages="2" :prev-text="'&lt;'"
                 :next-text="'&gt;'" :click-handler="clickCallback" :container-class="'paginate'"
                 :page-class="'page-item'" :page-link-class="'page-item__link'" :active-class="'page-active__item'"
                 :prev-class="'prev-item'" :prev-link-class="'prev-item__link'" :next-class="'next-item'"
@@ -34,6 +35,7 @@ export default {
             users: [],
             perPage: null,
             currentPage: null,
+            keyword: '',
         };
     },
     methods: {
@@ -59,14 +61,18 @@ export default {
         },
     },
     computed: {
+        filteredUsers() {
+            if (!this.keyword) return this.users;
+            return this.users.filter(user => user.name.includes(this.keyword));
+        },
         getUsers() {
             let current = this.currentPage * this.perPage;
             let start = current - this.perPage;
 
-            return this.users.slice(start, current);
+            return this.filteredUsers.slice(start, current);
         },
         getPageCount() {
-            return Math.ceil(this.users.length / this.perPage);
+            return Math.ceil(this.filteredUsers.length / this.perPage);
         },
     },
     created() {
