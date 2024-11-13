@@ -35,4 +35,20 @@ export default {
     color: #63594F;
     margin-top: 2rem;
 }
+
+@media screen and (max-width: 1024px) {
+    .menu {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-title {
+        font-size: x-large;
+    }
+
+    .menu-link {
+        font-size: 2rem;
+    }
+}
 </style>

@@ -211,4 +211,24 @@ export default {
     top: 15rem;
     right: 5rem;
 }
+
+@media screen and (max-width: 1024px) {
+    .daily-table {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .daily-table {
+        width: 100%;
+    }
+
+    .title-name {
+        font-size: larger;
+    }
+
+    .item-detail {
+        font-size: larger;
+    }
+}
 </style>

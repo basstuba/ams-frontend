@@ -10,8 +10,8 @@
             </tr>
             <tr class="data-item" v-for="user in getUsers" :key="user.id">
                 <td class="item-detail">{{ user.name }}</td>
-                <td class="item-detail">
-                    <button @click="linkWorkConfirm(user.id)">勤怠確認</button>
+                <td class="item-button">
+                    <button class="button-detail" @click="linkWorkConfirm(user.id)">勤怠確認</button>
                 </td>
             </tr>
         </table>
@@ -80,3 +80,107 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.all-user {
+    text-align: center;
+    padding: 2rem;
+}
+
+.all-user__title {
+    font-size: 3rem;
+    font-weight: 100;
+    margin-bottom: 1.5rem;
+}
+
+.search-input {
+    border: 0.1rem solid #FFD49F;
+    font-size: x-large;
+    padding: 0.2rem 1rem;
+}
+
+.search-input:focus-visible {
+    outline: 0;
+}
+
+.all-user__table {
+    width: 40%;
+    margin: 1rem auto;
+    border-collapse: collapse;
+}
+
+.title-name {
+    color: #63594F;
+    font-size: x-large;
+    text-align: left;
+}
+
+.item-detail {
+    font-size: x-large;
+    text-align: left;
+    border-bottom: 0.1rem solid #94816A;
+    padding: 0.5rem 0;
+}
+
+.item-button {
+    font-size: x-large;
+    text-align: right;
+    border-bottom: 0.1rem solid #94816A;
+    padding: 0.5rem 0;
+}
+
+.button-detail {
+    background-color: #FFD49F;
+    border: none;
+    border-radius: 1rem;
+    font-size: large;
+    padding: 0.3rem 3rem;
+}
+
+.pagination {
+    width: 30%;
+    margin: 2rem auto 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .all-user__table {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .all-user__table {
+        width: 60%;
+    }
+}
+</style>
+
+<style>
+.paginate {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none;
+}
+
+.page-item__link,
+.prev-item__link,
+.next-item__link {
+    color: #FCA63C;
+    background-color: #fff;
+    border: 0.1rem solid #FFD49F;
+    display: block;
+    font-size: larger;
+    padding: 0.5rem 1rem;
+}
+
+.page-item__link,
+.prev-item__link {
+    margin-right: -0.1rem;
+}
+
+.page-active__item a {
+    color: #fff;
+    background-color: #FFD49F;
+}
+</style>
