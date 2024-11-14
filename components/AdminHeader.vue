@@ -4,6 +4,9 @@
             <h1 class="title-logo">管理画面</h1>
         </div>
         <nav class="header-nav">
+            <div class="link-back" v-if="$route.path.startsWith('/monthly/')">
+                <NuxtLink class="link__all-user" to="/allUser">個人別勤怠一覧</NuxtLink>
+            </div>
             <div class="link-nav">
                 <NuxtLink class="link-admin" to="/admin">メニュー</NuxtLink>
             </div>
@@ -43,6 +46,15 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.link-back {
+    margin-right: 1.5rem;
+}
+
+.link__all-user {
+    text-decoration: none;
+    color: #000;
 }
 
 .link-admin {
