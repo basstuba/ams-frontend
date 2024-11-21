@@ -13,6 +13,12 @@
                 <td class="item-button">
                     <button class="button-detail" @click="linkWorkConfirm(user.id)">勤怠確認</button>
                 </td>
+                <td class="item-button">
+                    <button class="button-fixes" @click="linkWorkFixes(user.id)">勤怠修正</button>
+                </td>
+                <td class="item-button">
+                    <button class="button-add" @click="linkWorkAdd(user.id)">勤怠追加</button>
+                </td>
             </tr>
         </table>
         <div class="pagination">
@@ -55,6 +61,12 @@ export default {
         },
         linkWorkConfirm(id) {
             this.$router.push(`/monthly/${id}`);
+        },
+        linkWorkFixes(id) {
+            this.$router.push(`/fixes/${id}`);
+        },
+        linkWorkAdd(id) {
+            this.$router.push(`/add/${id}`);
         },
         clickCallback(pageNum) {
             this.currentPage = Number(pageNum);
@@ -104,7 +116,7 @@ export default {
 }
 
 .all-user__table {
-    width: 40%;
+    width: 50%;
     margin: 1rem auto;
     border-collapse: collapse;
 }
@@ -133,8 +145,19 @@ export default {
     background-color: #FFD49F;
     border: none;
     border-radius: 1rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
     font-size: large;
     padding: 0.3rem 3rem;
+}
+
+.button-fixes,
+.button-add {
+    background-color: #FFD49F;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    font-size: large;
+    padding: 0.3rem 1.5rem;
 }
 
 .pagination {
@@ -144,13 +167,13 @@ export default {
 
 @media screen and (max-width: 1024px) {
     .all-user__table {
-        width: 50%;
+        width: 70%;
     }
 }
 
 @media screen and (max-width: 768px) {
     .all-user__table {
-        width: 60%;
+        width: 90%;
     }
 }
 </style>

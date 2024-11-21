@@ -4,7 +4,7 @@
             <h1 class="title-logo">管理画面</h1>
         </div>
         <nav class="header-nav">
-            <div class="link-back" v-if="$route.path.startsWith('/monthly/')">
+            <div class="link-back" v-if="matchesRoute($route.path)">
                 <NuxtLink class="link__all-user" to="/allUser">個人別勤怠一覧</NuxtLink>
             </div>
             <div class="link-nav">
@@ -20,6 +20,10 @@
 <script>
 export default {
     methods: {
+        matchesRoute(path) {
+            const prefixes = ['/monthly/', '/fixes/', '/add/'];
+            return prefixes.some(prefix => path.startWith(prefix));
+        },
         async logout() {
             try {
                 await this.$auth.logout();
