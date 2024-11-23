@@ -22,7 +22,7 @@ export default {
     methods: {
         matchesRoute(path) {
             const prefixes = ['/monthly/', '/fixes/', '/add/'];
-            return prefixes.some(prefix => path.startWith(prefix));
+            return prefixes.some(prefix => path.startsWith(prefix));
         },
         async logout() {
             try {

@@ -46,12 +46,12 @@ export default {
     methods: {
         async register() {
             try {
-                const response = await this.$axios.post('http://localhost/api/auth/register', {
+                const { data } = await this.$axios.post('http://localhost/api/auth/register', {
                     name: this.name,
                     email: this.email,
                     password: this.password,
                 });
-                alert(response.data.message);
+                alert(data.message);
                 this.$router.push('/login');
             } catch (error) {
                 if (error.response && error.response.data && error.response.data.error) {

@@ -56,12 +56,12 @@ export default {
             thisMonth: null,
             monthBefore: null,
             monthAfter: null,
-            userData: [],
             totalWorkTime: null,
+            userData: [],
             workLists: [],
             filteredMonthWorks: [],
-            isModalOpen: false,
             selectedRests: [],
+            isModalOpen: false,
         }
     },
     methods: {
