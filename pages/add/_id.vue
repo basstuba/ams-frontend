@@ -100,3 +100,90 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.add {
+    text-align: center;
+    padding: 2rem;
+}
+
+.user-name {
+    font-size: xx-large;
+}
+
+.add-content {
+    width: 60%;
+    background-color: #FFEACE;
+    border-radius: 0.3rem;
+    box-shadow: 0.1rem 0.3rem 0.3rem #8d8d8d;
+    padding: 2rem;
+    margin: 2rem auto;
+}
+
+.add-form__item {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.add-form__item-title {
+    color: #63594F;
+    font-size: xx-large;
+}
+
+.add-form__item-input {
+    width: 50%;
+    border: 0.1rem solid #EBA958;
+    font-size: x-large;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+}
+
+.add-form__item-input:focus-visible {
+    outline: 0;
+}
+
+.error {
+    width: 70%;
+    color: #FF0202;
+    font-size: large;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.add-form__button {
+    background-color: #FFD49F;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    font-size: xx-large;
+    padding: 0.5rem 4rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    .add-content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .add-content {
+        width: 90%;
+    }
+
+    .add-form__item-title {
+        font-size: x-large;
+    }
+
+    .add-form__item-input {
+        font-size: larger;
+    }
+
+    .add-form__button {
+        font-size: x-large;
+    }
+}
+</style>
