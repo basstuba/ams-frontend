@@ -89,6 +89,7 @@ export default {
     border-bottom: 0.1rem solid #000;
     font-size: larger;
     padding-top: 1rem;
+    cursor: pointer;
 }
 
 .item-input:focus-visible {
@@ -106,7 +107,59 @@ export default {
     cursor: pointer;
 }
 
+.login-button:hover {
+    background-color: #00eaff;
+}
+
 .error {
     color: #FF0202;
+}
+
+@media screen and (max-width: 1024px) {
+    .login {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .login {
+        width: 60%;
+        margin: 3rem auto;
+    }
+}
+
+@media screen and (max-width: 431px) {
+    .login {
+        width: 70%;
+    }
+
+    .item-input {
+        width: 70%;
+        font-size: medium;
+    }
+
+    .error {
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .login {
+        width: 80%;
+    }
+
+    .error {
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .login {
+        width: 90%;
+    }
+
+    .login-title {
+        font-size: x-large;
+    }
 }
 </style>

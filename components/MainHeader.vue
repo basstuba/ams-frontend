@@ -52,4 +52,32 @@ export default {
     background-color: #ABE0D3;
     cursor: pointer;
 }
+
+@media screen and (max-width: 431px) {
+    .title-logo {
+        font-size: large;
+    }
+
+    .link-register,
+    .link-login {
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .header {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .header {
+        padding: 1rem 0.5rem;
+    }
+
+    .link-register,
+    .link-login {
+        margin: 0 0.3rem;
+    }
+}
 </style>
