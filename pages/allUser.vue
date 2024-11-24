@@ -109,6 +109,7 @@ export default {
     border: 0.1rem solid #FFD49F;
     font-size: x-large;
     padding: 0.2rem 1rem;
+    cursor: pointer;
 }
 
 .search-input:focus-visible {
@@ -171,7 +172,7 @@ export default {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
     .all-user__table {
         width: 90%;
     }

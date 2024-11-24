@@ -218,7 +218,7 @@ export default {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
     .daily-table {
         width: 100%;
     }
