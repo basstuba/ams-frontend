@@ -265,6 +265,11 @@ export default {
     .monthly-table {
         width: 90%;
     }
+
+    .modal-component {
+        width: 35%;
+        right: 2rem;
+    }
 }
 
 @media screen and (max-width: 820px) {
@@ -282,6 +287,11 @@ export default {
 
     .total-time__count {
         font-size: larger;
+    }
+
+    .modal-component {
+        width: 40%;
+        top: 10rem;
     }
 }
 </style>
