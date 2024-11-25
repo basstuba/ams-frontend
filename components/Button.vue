@@ -119,6 +119,10 @@ export default {
     cursor: pointer;
 }
 
+.work-start:hover {
+    background-color: #60afff;
+}
+
 .break-start,
 .break-end {
     display: block;
@@ -133,6 +137,11 @@ export default {
     cursor: pointer;
 }
 
+.break-start:hover,
+.break-end:hover {
+    background-color: #9ad478;
+}
+
 .work-end {
     width: 30%;
     background-color: #A2CEFA;
@@ -142,5 +151,55 @@ export default {
     font-size: 3rem;
     padding: 1rem 0;
     cursor: pointer;
+}
+
+.work-end:hover {
+    background-color: #60afff;
+}
+
+@media screen and (max-width: 1024px) {
+    .work-start,
+    .break-start,
+    .break-end,
+    .work-end {
+        width: 40%;
+    }
+
+}
+
+@media screen and (max-width: 820px) {
+    .content-message {
+        font-size: larger;
+    }
+
+    .work-start,
+    .break-start,
+    .break-end,
+    .work-end {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 431px) {
+    .work-start,
+    .break-start,
+    .break-end,
+    .work-end {
+        width: 60%;
+        font-size: xx-large;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .content-message {
+        font-size: medium;
+    }
+
+    .work-start,
+    .break-start,
+    .break-end,
+    .work-end {
+        width: 70%;
+    }
 }
 </style>

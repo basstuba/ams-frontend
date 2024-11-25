@@ -59,7 +59,8 @@ export default {
     }
 
     .link-register,
-    .link-login {
+    .link-login,
+    .logout {
         font-size: small;
     }
 }

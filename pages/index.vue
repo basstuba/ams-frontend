@@ -77,4 +77,22 @@ export default {
 	font-size: xx-large;
 	margin-bottom: 0.5rem;
 }
+
+@media screen and (max-width: 820px) {
+	.user-message {
+		font-size: x-large;
+	}
+}
+
+@media screen and (max-width: 431px) {
+	.user-message {
+		font-size: larger;
+	}
+}
+
+@media screen and (max-width: 321px) {
+	.user-message {
+		font-size: medium;
+	}
+}
 </style>

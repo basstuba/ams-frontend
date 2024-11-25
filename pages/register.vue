@@ -116,7 +116,64 @@ export default {
     cursor: pointer;
 }
 
+.register-button:hover {
+    background-color: #00eaff;
+}
+
 .error {
     color: #FF0202;
+}
+
+@media screen and (max-width: 1024px) {
+    .register {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .register {
+        width: 60%;
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+
+    .register-title {
+        font-size: x-large;
+    }
+}
+
+@media screen and (max-width: 431px) {
+    .register {
+        width: 70%;
+    }
+
+    .item-input {
+        width: 70%;
+        font-size: medium;
+    }
+
+    .error {
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .register {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .register {
+        width: 90%;
+    }
+
+    .register-title {
+        font-size: larger;
+    }
+
+    .register-button {
+        font-size: larger;
+    }
 }
 </style>

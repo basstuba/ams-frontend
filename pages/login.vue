@@ -147,10 +147,6 @@ export default {
     .login {
         width: 80%;
     }
-
-    .error {
-        font-size: small;
-    }
 }
 
 @media screen and (max-width: 321px) {
