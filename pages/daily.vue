@@ -216,6 +216,11 @@ export default {
     .daily-table {
         width: 90%;
     }
+
+    .modal-component {
+        width: 35%;
+        right: 2rem;
+    }
 }
 
 @media screen and (max-width: 820px) {
@@ -229,6 +234,11 @@ export default {
 
     .item-detail {
         font-size: larger;
+    }
+
+    .modal-component {
+        width: 40%;
+        top: 9rem;
     }
 }
 </style>
