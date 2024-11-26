@@ -1,68 +1,111 @@
-# ams-frontend
+# 勤怠管理システム～Attendance management system～
 
-## Build Setup
+![トップページ](reademe_image/AmsTopPage.png)
 
-```bash
-# install dependencies
-$ yarn install
+こちらは勤怠管理システムのフロントエンドになります。
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+フロントエンド、バックエンド共に起動状態でアプリをご利用いただけます。
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+下記のURLよりバックエンドも環境構築を行ってください。
 
-# generate static project
-$ yarn generate
-```
+## バックエンド URL
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+https://github.com/basstuba/ams
 
-## Special Directories
+## フロントエンド URL
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+http://localhost:3000
 
-### `assets`
+## 作成した目的
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+シンプルで使いやすい打刻画面と勤怠管理をするにあたって必要と思われる機能を揃えた管理画面の勤怠管理アプリを作成したいと思い作成しました。
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+## 機能一覧
 
-### `components`
+・アカウント作成機能
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+・ログイン及びログアウト機能
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+・打刻機能
 
-### `layouts`
+（出勤、退勤、休憩開始、休憩終了）
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+・日付別勤怠一覧表示機能
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+・個人別勤怠一覧表示機能
 
-### `pages`
+・ユーザーアカウント検索機能
 
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+・ページネーション機能
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
+・エクスポート機能
 
-### `plugins`
+（日付別勤怠一覧及び個人別勤怠一覧をExcelにて出力）
 
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
+・打刻修正機能
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
+・打刻追加機能
 
-### `static`
+## 使用技術
 
-This directory contains your static files. Each file inside this directory is mapped to `/`.
+・Nuxt 2.18.1
 
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
+・Node.js 20.17.0
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
+・vue 2.7.10
 
-### `store`
+・yarn 1.22.22
 
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
+・HTML
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+・CSS
+
+# 環境構築
+
+**事前にNode.jsとGitのインストールをお願い致します。**
+
+## 1 Gitファイルをクローンする
+
+git clone git@github.com:basstuba/ams-frontend.git
+
+## 2 クローンしたディレクトリに移動する
+
+cd ams-frontend
+
+## 3 yarnをインストールする
+
+yarn install
+
+## 4 ローカルサーバーを起動する
+
+yarn dev
+
+# 各種機能について
+
+## トップページ
+
+・勤務開始ボタンをクリックすると休憩開始ボタンと勤務終了ボタンが表示されます。休憩開始ボタンをクリックすると休憩終了ボタンが表示されます。
+
+## 管理画面
+
+・管理者用アカウントでログインすると表示されます。
+
+![管理画面](readme_image/AmsAdminPage.png)
+
+### 管理者用アカウントの詳細は下記の通りです。
+
+email -> admin@admin.com
+
+password -> adminadmin
+
+## 打刻修正及び追加
+
+・打刻忘れや打刻間違いを修正する為の機能です。個人別勤怠一覧ページから各ページに移動し修正、追加を行えます。
+
+![個人別勤怠一覧](readme_image/AmsAllUserPage.png)
+
+## その他
+
+・環境構築はフロントエンド、バックエンド共にlocalhostでの使用方法となります。
+
+・打刻画面は携帯電話でも利用出来るようにレスポンシブデザインを設計していますが、管理画面はエクスポート機能がある為携帯電話での利用は想定していません。
