@@ -66,24 +66,24 @@ https://github.com/basstuba/ams
 ### Nuxtの構築
 
 1. GitHubからアプリケーションを取得
-   
+
    任意のディレクトリにて
    ```
    git clone git@github.com:basstuba/ams-frontend.git
    ```
    を実行後
-  
+
    ```
    cd ams-frontend
    ```
    にてアプリケーションのディレクトリへ移動。
-  
+
 2. yarnをインストール
    ```
    yarn install
    ```
    を実行。
-  
+
 3. ローカルサーバーを起動
    ```
    yarn dev
@@ -95,16 +95,20 @@ https://github.com/basstuba/ams
 ## アプリケーション URL
 
 http://localhost:3000
-  
+
 ## 各種機能について
 
 ### 新規登録画面
+
+![新規登録画面](readme_image/AmsRegisterPage.png)
 
 #### アカウント作成機能
 
 - お名前、メールアドレス、パスワードを入力し登録ボタンを押して作成します。
 
 ### ログイン画面
+
+![ログイン画面](readme_image/AmsLoginpage.png)
 
 #### ログイン及びログアウト機能
 
