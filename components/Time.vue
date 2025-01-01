@@ -28,11 +28,12 @@ export default {
 
 <style scoped>
 .time {
-    color: #4F546C;
+    color: #202124;
     font-size: 8rem;
+    letter-spacing: -0.2rem;
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 1024px) {
     .time {
         font-size: 6rem;
     }

@@ -119,6 +119,8 @@ http://localhost:3000
 
 ![トップページ](readme_image/AmsTopPage.png)
 
+![トップページ2](readme_image/AmsTopPage2.png)
+
 #### 打刻機能
 
 - 勤務開始ボタンをクリックすると休憩開始ボタンと勤務終了ボタンが表示されます。休憩開始ボタンをクリックすると休憩終了ボタンが表示されます。

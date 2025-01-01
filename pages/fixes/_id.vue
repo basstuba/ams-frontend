@@ -61,34 +61,36 @@
                         <div class="rest-data__title-name">休憩時間</div>
                         <div class="rest-data__title-name">&emsp;</div>
                     </div>
-                    <validation-observer ref="obs" v-slot="ObserverProps">
-                        <form class="rest-data__item-form"
-                            @submit.prevent="ObserverProps.handleSubmit(() => restFixes(rest))">
-                            <div class="rest-data__item" v-for="rest in work.rests" :key="rest.id">
-                                <div class="rest-data__item-detail">
-                                    <validation-provider v-slot="{ errors }" rules="required|time_format">
-                                        <input class="rest-data__item-input" type="text" v-model="rest.break_start"
-                                            name="休憩開始時間">
-                                        <div class="error">&emsp;{{ errors[0] }}</div>
-                                    </validation-provider>
+                    <div class="rest-container" v-for="rest in work.rests" :key="rest.id">
+                        <validation-observer ref="obs" v-slot="ObserverProps">
+                            <form class="rest-data__item-form"
+                                @submit.prevent="ObserverProps.handleSubmit(() => restFixes(rest))">
+                                <div class="rest-data__item">
+                                    <div class="rest-data__item-detail">
+                                        <validation-provider v-slot="{ errors }" rules="required|time_format">
+                                            <input class="rest-data__item-input" type="text" v-model="rest.break_start"
+                                                name="休憩開始時間">
+                                            <div class="error">&emsp;{{ errors[0] }}</div>
+                                        </validation-provider>
+                                    </div>
+                                    <div class="rest-data__item-detail">
+                                        <validation-provider v-slot="{ errors }" rules="required|time_format">
+                                            <input class="rest-data__item-input" type="text" v-model="rest.break_end"
+                                                name="休憩終了時間">
+                                            <div class="error">&emsp;{{ errors[0] }}</div>
+                                        </validation-provider>
+                                    </div>
+                                    <div class="rest-data__item-detail">
+                                        {{ rest.break_time }}
+                                    </div>
+                                    <div class="rest-data__item-detail">
+                                        <input type="hidden" v-model="rest.id" name="restId">
+                                        <button class="fixes-button" type="submit">修正</button>
+                                    </div>
                                 </div>
-                                <div class="rest-data__item-detail">
-                                    <validation-provider v-slot="{ errors }" rules="required|time_format">
-                                        <input class="rest-data__item-input" type="text" v-model="rest.break_end"
-                                            name="休憩終了時間">
-                                        <div class="error">&emsp;{{ errors[0] }}</div>
-                                    </validation-provider>
-                                </div>
-                                <div class="rest-data__item-detail">
-                                    {{ rest.break_time }}
-                                </div>
-                                <div class="rest-data__item-detail">
-                                    <input type="hidden" v-model="rest.id" name="restId">
-                                    <button class="fixes-button" type="submit">修正</button>
-                                </div>
-                            </div>
-                        </form>
-                    </validation-observer>
+                            </form>
+                        </validation-observer>
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,7 +104,7 @@ export default {
         return {
             searchDate: '',
             userData: [],
-            searchWorkData: []
+            searchWorkData: [],
         };
     },
     methods: {
@@ -126,6 +128,7 @@ export default {
                     user_id: this.userData.id,
                     search_date: this.searchDate
                 });
+                console.log(data.search_work_data);
                 this.searchWorkData = data.search_work_data.map(work => ({
                     ...work,
                     break_total: work.break_total ?? '00:00:00'

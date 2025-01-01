@@ -99,6 +99,7 @@ export default {
 
 <style scoped>
 .content-message {
+    color: #555;
     font-size: x-large;
 }
 
@@ -110,51 +111,54 @@ export default {
 
 .work-start {
     width: 30%;
-    background-color: #A2CEFA;
+    color: #fff;
+    background: linear-gradient(to bottom, #1A73E8 30%, #00377F 90%);
     border: none;
-    border-radius: 0.5rem;
-    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    border-radius: 2rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #797979;
     font-size: 3rem;
     padding: 2rem 0;
     cursor: pointer;
 }
 
 .work-start:hover {
-    background-color: #60afff;
+    background: linear-gradient(to bottom, #4285f4 30%, #2d60b1 90%);
 }
 
 .break-start,
 .break-end {
     display: block;
     width: 30%;
-    background-color: #DBF1CE;
+    color: #fff;
+    background: linear-gradient(to bottom, #FFBA5E 35%, #FB8C00 90%);
     border: none;
-    border-radius: 0.5rem;
-    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    border-radius: 2rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #797979;
     font-size: 3rem;
     padding: 1rem;
-    margin: 0 auto 2rem;
+    margin: 0 auto 2.5rem;
     cursor: pointer;
 }
 
 .break-start:hover,
 .break-end:hover {
-    background-color: #9ad478;
+    background: linear-gradient(to bottom, #ffc876 35%, #ff9f2a 90%);
 }
 
 .work-end {
     width: 30%;
-    background-color: #A2CEFA;
+    color: #fff;
+    background: linear-gradient(to bottom, #1A73E8 30%, #00377F 90%);
     border: none;
-    border-radius: 0.5rem;
-    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    border-radius: 2rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #797979;
     font-size: 3rem;
     padding: 1rem 0;
     cursor: pointer;
 }
 
 .work-end:hover {
-    background-color: #60afff;
+    background: linear-gradient(to bottom, #4285f4 30%, #2d60b1 90%);
 }
 
 @media screen and (max-width: 1024px) {

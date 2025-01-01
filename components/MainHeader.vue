@@ -33,23 +33,28 @@ export default {
 
 <style scoped>
 .header {
-    background-color: #ABE0D3;
+    background-color: #1A73E8;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
 }
 
+.title-logo {
+    color: #fff;
+}
+
 .link-register,
 .link-login {
     text-decoration: none;
-    color: #000;
+    color: #fff;
     margin: 0 0.5rem;
 }
 
 .logout {
     border: none;
-    background-color: #ABE0D3;
+    background-color: #1A73E8;
+    color: #fff;
     cursor: pointer;
 }
 

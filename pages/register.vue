@@ -106,10 +106,11 @@ export default {
 }
 
 .register-button {
-    background-color: #A9F8FF;
+    color: #fff;
+    background: linear-gradient(to bottom, #1A73E8 30%, #00377F 90%);
     border: none;
     border-radius: 1rem;
-    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    box-shadow: 0.1rem 0.2rem 0.2rem #797979;
     font-size: x-large;
     padding: 0.3rem 5rem;
     margin-top: 1rem;
@@ -117,7 +118,7 @@ export default {
 }
 
 .register-button:hover {
-    background-color: #00eaff;
+    background: linear-gradient(to bottom, #4285f4 30%, #2d60b1 90%);
 }
 
 .error {

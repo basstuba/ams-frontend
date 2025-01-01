@@ -74,6 +74,7 @@ export default {
 }
 
 .user-message {
+	color: #555;
 	font-size: xx-large;
 	margin-bottom: 0.5rem;
 }
