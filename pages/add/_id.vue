@@ -113,7 +113,7 @@ export default {
 
 .add-content {
     width: 60%;
-    background-color: #FFEACE;
+    background-color: #fff;
     border-radius: 0.3rem;
     box-shadow: 0.1rem 0.3rem 0.3rem #8d8d8d;
     padding: 2rem;
@@ -129,13 +129,14 @@ export default {
 }
 
 .add-form__item-title {
-    color: #63594F;
+    color: #4A4A4A;
     font-size: xx-large;
 }
 
 .add-form__item-input {
     width: 50%;
-    border: 0.1rem solid #EBA958;
+    background-color: #F9FAFB;
+    border: 0.1rem solid #2563EB;
     font-size: x-large;
     padding: 0.3rem 0.5rem;
     cursor: pointer;
@@ -154,13 +155,18 @@ export default {
 }
 
 .add-form__button {
-    background-color: #FFD49F;
+    color: #fff;
+    background: linear-gradient(to bottom, #5384FF 30%, #0131A8 90%);
     border: none;
     border-radius: 1rem;
     box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
     font-size: xx-large;
     padding: 0.5rem 4rem;
     cursor: pointer;
+}
+
+.add-form__button:hover {
+    background: linear-gradient(to bottom, #6e97ff 30%, #0041e4 90%);
 }
 
 @media screen and (max-width: 1024px) {

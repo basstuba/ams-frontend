@@ -195,7 +195,7 @@ export default {
 
 .fixes-content {
     width: 80%;
-    background-color: #FFEACE;
+    background-color: #fff;
     border-radius: 0.3rem;
     box-shadow: 0.1rem 0.3rem 0.3rem #8d8d8d;
     padding: 2rem;
@@ -210,7 +210,8 @@ export default {
 
 .search-input {
     display: block;
-    border: 0.1rem solid #EBA958;
+    background-color: #F9FAFB;
+    border: 0.1rem solid #2563EB;
     font-size: x-large;
     padding: 0.3rem 1rem;
     margin: 0.5rem auto;
@@ -228,14 +229,16 @@ export default {
 
 .work-data__title,
 .rest-data__title {
+    background-color: #F1F1F1;
     display: flex;
     justify-content: left;
     align-items: center;
+    padding: 0.5rem 0;
 }
 
 .work-data__title-name {
     width: 16%;
-    color: #63594F;
+    color: #4A4A4A;
     font-size: x-large;
     text-align: left;
 }
@@ -245,7 +248,7 @@ export default {
     display: flex;
     justify-content: left;
     align-items: baseline;
-    border-bottom: 0.1rem solid #94816A;
+    border-bottom: 0.1rem solid #252525;
     margin-top: 1rem;
 }
 
@@ -257,7 +260,8 @@ export default {
 
 .work-data__item-input {
     width: 80%;
-    border: 0.1rem solid #EBA958;
+    background-color: #F9FAFB;
+    border: 0.1rem solid #2563EB;
     padding: 0 0.3rem;
     cursor: pointer;
 }
@@ -272,14 +276,18 @@ export default {
 }
 
 .fixes-button {
-    color: #63594F;
-    background-color: #FFD49F;
+    color: #fff;
+    background: linear-gradient(to bottom, #5384FF 30%, #0131A8 90%);
     border: none;
     border-radius: 0.7rem;
     box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
     font-size: larger;
     padding: 0.2rem 0.7rem;
     cursor: pointer;
+}
+
+.fixes-button:hover {
+    background: linear-gradient(to bottom, #6e97ff 30%, #0041e4 90%);
 }
 
 .rest-detail {
@@ -289,7 +297,7 @@ export default {
 
 .rest-data__title-name {
     width: 25%;
-    color: #63594F;
+    color: #4A4A4A;
     font-size: x-large;
     text-align: left;
 }
@@ -302,7 +310,8 @@ export default {
 
 .rest-data__item-input {
     width: 70%;
-    border: 0.1rem solid #EBA958;
+    background-color: #F9FAFB;
+    border: 0.1rem solid #2563EB;
     padding: 0 0.3rem;
     cursor: pointer;
 }

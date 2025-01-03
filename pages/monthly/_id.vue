@@ -224,34 +224,47 @@ export default {
     border-collapse: collapse;
 }
 
+.data-title {
+    background-color: #F1F1F1;
+}
+
 .title-name {
     width: 15%;
-    color: #63594F;
+    color: #4A4A4A;
     font-size: x-large;
     text-align: left;
+    padding: 0.5rem 0;
+}
+
+.data-item {
+    background-color: #fff;
 }
 
 .item-detail {
     font-size: x-large;
     text-align: left;
-    border-bottom: 0.1rem solid #94816A;
-    padding: 0.5rem 0;
+    border-bottom: 0.1rem solid #252525;
+    padding: 0.8rem 0;
 }
 
 .total-time__count {
     font-size: x-large;
     text-align: left;
-    padding: 0.5rem 0;
+    padding: 0.8rem 0;
 }
 
 .modal-open {
-    color: #63594F;
-    background-color: #FFD49F;
+    color: #fff;
+    background: linear-gradient(to bottom, #5384FF 30%, #0131A8 90%);
     border: none;
     border-radius: 0.8rem;
     box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
     padding: 0.1rem 1rem;
     cursor: pointer;
+}
+
+.modal-open:hover {
+    background: linear-gradient(to bottom, #6e97ff 30%, #0041e4 90%);
 }
 
 .modal-component {
@@ -273,6 +286,10 @@ export default {
 }
 
 @media screen and (max-width: 820px) {
+    .user-name {
+        font-size: 2rem;
+    }
+
     .monthly-table {
         width: 100%;
     }

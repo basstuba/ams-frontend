@@ -39,11 +39,15 @@ export default {
 
 <style scoped>
 .header {
-    background-color: #FFEACE;
+    background-color: #001750;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+}
+
+.title-logo {
+    color: #fff;
 }
 
 .header-nav {
@@ -58,16 +62,17 @@ export default {
 
 .link__all-user {
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
 
 .link-admin {
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
 
 .logout {
-    background-color: #FFEACE;
+    color: #fff;
+    background-color: #001750;
     border: none;
     margin-left: 1rem;
     cursor: pointer;

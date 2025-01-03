@@ -106,7 +106,7 @@ export default {
 }
 
 .search-input {
-    border: 0.1rem solid #FFD49F;
+    border: 0.1rem solid #2563EB;
     font-size: x-large;
     padding: 0.2rem 1rem;
     cursor: pointer;
@@ -118,52 +118,84 @@ export default {
 
 .all-user__table {
     width: 50%;
+    background-color: #F1F1F1;
     margin: 1rem auto;
     border-collapse: collapse;
 }
 
 .title-name {
-    color: #63594F;
+    color: #4A4A4A;
     font-size: x-large;
     text-align: left;
+    padding: 0.5rem 0;
+}
+
+.data-item {
+    background-color: #fff;
 }
 
 .item-detail {
     font-size: x-large;
     text-align: left;
-    border-bottom: 0.1rem solid #94816A;
-    padding: 0.5rem 0;
+    border-bottom: 0.1rem solid #252525;
+    padding: 0.8rem 0;
 }
 
 .item-button {
     font-size: x-large;
     text-align: right;
-    border-bottom: 0.1rem solid #94816A;
-    padding: 0.5rem 0;
+    border-bottom: 0.1rem solid #252525;
+    padding: 0.8rem 0;
 }
 
 .button-detail {
-    background-color: #FFD49F;
+    color: #fff;
+    background: linear-gradient(to bottom, #5384FF 30%, #0131A8 90%);
     border: none;
     border-radius: 1rem;
     box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
     font-size: large;
     padding: 0.3rem 3rem;
+    cursor: pointer;
 }
 
-.button-fixes,
-.button-add {
-    background-color: #FFD49F;
+.button-detail:hover {
+    background: linear-gradient(to bottom, #6e97ff 30%, #0041e4 90%);
+}
+
+.button-fixes {
+    color: #fff;
+    background: linear-gradient(to bottom, #00C91E 30%, #006C10 90%);
     border: none;
     border-radius: 1rem;
     box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
     font-size: large;
     padding: 0.3rem 1.5rem;
+    cursor: pointer;
+}
+
+.button-fixes:hover {
+    background: linear-gradient(to bottom, #00e022 30%, #009016 90%);
+}
+
+.button-add {
+    color: #fff;
+    background: linear-gradient(to bottom, #FFA049 30%, #C96C00 90%);
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    font-size: large;
+    padding: 0.3rem 1.5rem;
+    cursor: pointer;
+}
+
+.button-add:hover {
+    background: linear-gradient(to bottom, #ffad60 30%, #ff8800 90%);
 }
 
 .pagination {
     width: 30%;
-    margin: 2rem auto 0;
+    margin: 1.5rem auto 0;
 }
 
 @media screen and (max-width: 1024px) {
@@ -173,6 +205,10 @@ export default {
 }
 
 @media screen and (max-width: 820px) {
+    .all-user__title {
+        font-size: 2rem;
+    }
+
     .all-user__table {
         width: 90%;
     }
@@ -190,9 +226,9 @@ export default {
 .page-item__link,
 .prev-item__link,
 .next-item__link {
-    color: #FCA63C;
+    color: #2563EB;
     background-color: #fff;
-    border: 0.1rem solid #FFD49F;
+    border: 0.1rem solid #2563EB;
     display: block;
     font-size: larger;
     padding: 0.5rem 1rem;
@@ -205,6 +241,6 @@ export default {
 
 .page-active__item a {
     color: #fff;
-    background-color: #FFD49F;
+    background-color: #2563EB;
 }
 </style>

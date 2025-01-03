@@ -38,14 +38,18 @@ export default {
 }
 
 .modal-button__close {
-    color: #63594F;
-    background-color: #FFD49F;
+    color: #fff;
+    background: linear-gradient(to bottom, #ff0c0c 30%, #700000 90%);
     border: none;
     border-radius: 0.8rem;
     box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
     padding: 0.1rem 1rem;
     margin-bottom: 0.5rem;
     cursor: pointer;
+}
+
+.modal-button__close:hover {
+    background: linear-gradient(to bottom, #ff4343 30%, #b10000 90%);
 }
 
 .modal-table {
@@ -55,7 +59,7 @@ export default {
 }
 
 .title-name {
-    color: #63594F;
+    color: #4A4A4A;
     font-size: larger;
     text-align: left;
 }
@@ -63,7 +67,7 @@ export default {
 .item-detail {
     font-size: large;
     text-align: left;
-    border-bottom: 0.1rem solid #94816A;
+    border-bottom: 0.1rem solid #252525;
     padding: 0.5rem 0;
 }
 </style>

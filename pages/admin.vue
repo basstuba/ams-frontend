@@ -32,7 +32,7 @@ export default {
     display: block;
     text-decoration: none;
     font-size: 2.5rem;
-    color: #63594F;
+    color: #4A4A4A;
     margin-top: 2rem;
 }
 
