@@ -1,8 +1,20 @@
 <template>
     <div class="menu">
         <h2 class="menu-title">メニュー</h2>
-        <NuxtLink class="menu-link" to="/daily">日付別勤怠一覧</NuxtLink>
-        <NuxtLink class="menu-link" to="/allUser">個人別勤怠一覧</NuxtLink>
+        <div class="menu-item">
+            <div class="menu-item__title">勤怠管理</div>
+            <div class="menu-item__link">
+                <NuxtLink class="menu-link" to="/daily">日付別勤怠一覧</NuxtLink>
+                <NuxtLink class="menu-link" to="/allUser">個人別勤怠一覧</NuxtLink>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item__title">従業員管理</div>
+            <div class="menu-item__link">
+                <NuxtLink class="menu-link" to="/employee-registration">従業員登録</NuxtLink>
+                <NuxtLink class="menu-link" to="/information-change">従業員情報変更</NuxtLink>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -20,7 +32,7 @@ export default {
     box-shadow: 0.1rem 0.3rem 0.3rem #8d8d8d;
     text-align: center;
     padding: 2rem;
-    margin: 8rem auto;
+    margin: 6rem auto;
 }
 
 .menu-title {
@@ -28,17 +40,36 @@ export default {
     margin-bottom: 1rem;
 }
 
+.menu-item__title {
+    font-size: xx-large;
+    color: #4A4A4A;
+    background-color: #F1F1F1;
+}
+
+.menu-item__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .menu-link {
+    width: 50%;
     display: block;
     text-decoration: none;
-    font-size: 2.5rem;
+    font-size: xx-large;
     color: #4A4A4A;
-    margin-top: 2rem;
+    margin: 1.5rem 0;
 }
 
 @media screen and (max-width: 1024px) {
     .menu {
-        width: 50%;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 926px) {
+    .menu {
+        width: 70%;
     }
 }
 
@@ -47,8 +78,18 @@ export default {
         font-size: x-large;
     }
 
+    .menu-item__title {
+        font-size: x-large;
+    }
+
     .menu-link {
-        font-size: 2rem;
+        font-size: x-large;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        margin: 5rem auto;
     }
 }
 </style>
