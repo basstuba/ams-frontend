@@ -31,17 +31,17 @@ export default {
     border-radius: 0.3rem;
     box-shadow: 0.1rem 0.3rem 0.3rem #8d8d8d;
     text-align: center;
-    padding: 2rem;
+    padding: 2rem 4rem;
     margin: 6rem auto;
 }
 
 .menu-title {
-    font-size: xx-large;
+    font-size: x-large;
     margin-bottom: 1rem;
 }
 
 .menu-item__title {
-    font-size: xx-large;
+    font-size: x-large;
     color: #4A4A4A;
     background-color: #F1F1F1;
 }
@@ -56,7 +56,7 @@ export default {
     width: 50%;
     display: block;
     text-decoration: none;
-    font-size: xx-large;
+    font-size: x-large;
     color: #4A4A4A;
     margin: 1.5rem 0;
 }
@@ -75,15 +75,15 @@ export default {
 
 @media screen and (max-width: 820px) {
     .menu-title {
-        font-size: x-large;
+        font-size: large;
     }
 
     .menu-item__title {
-        font-size: x-large;
+        font-size: large;
     }
 
     .menu-link {
-        font-size: x-large;
+        font-size: large;
     }
 }
 

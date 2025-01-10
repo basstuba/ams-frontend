@@ -112,7 +112,7 @@ export default {
 }
 
 .add-content {
-    width: 60%;
+    width: 50%;
     background-color: #fff;
     border-radius: 0.3rem;
     box-shadow: 0.1rem 0.3rem 0.3rem #8d8d8d;
@@ -121,7 +121,7 @@ export default {
 }
 
 .add-form__item {
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -130,14 +130,14 @@ export default {
 
 .add-form__item-title {
     color: #4A4A4A;
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 .add-form__item-input {
     width: 50%;
     background-color: #F9FAFB;
     border: 0.1rem solid #2563EB;
-    font-size: x-large;
+    font-size: large;
     padding: 0.3rem 0.5rem;
     cursor: pointer;
 }
@@ -160,7 +160,7 @@ export default {
     border: none;
     border-radius: 1rem;
     box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
-    font-size: xx-large;
+    font-size: x-large;
     padding: 0.5rem 4rem;
     cursor: pointer;
 }
@@ -181,15 +181,15 @@ export default {
     }
 
     .add-form__item-title {
-        font-size: x-large;
+        font-size: large;
     }
 
     .add-form__item-input {
-        font-size: larger;
+        font-size: large;
     }
 
     .add-form__button {
-        font-size: x-large;
+        font-size: large;
     }
 }
 </style>

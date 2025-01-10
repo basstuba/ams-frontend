@@ -100,7 +100,7 @@ export default {
 }
 
 .all-user__title {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 100;
     margin-bottom: 1.5rem;
 }

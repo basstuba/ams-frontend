@@ -33,7 +33,7 @@ export default {
     border: none;
     border-radius: 0.8rem;
     box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
-    font-size: x-large;
+    font-size: larger;
     padding: 0.3rem 1rem;
     cursor: pointer;
 }
@@ -44,7 +44,7 @@ export default {
 
 @media screen and (max-width: 820px) {
     .export-button {
-        font-size: large;
+        font-size: medium;
     }
 }
 </style>

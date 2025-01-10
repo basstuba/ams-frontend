@@ -281,8 +281,8 @@ export default {
     border: none;
     border-radius: 0.7rem;
     box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
-    font-size: larger;
-    padding: 0.2rem 0.7rem;
+    font-size: large;
+    padding: 0.3rem 1rem;
     cursor: pointer;
 }
 
@@ -317,6 +317,10 @@ export default {
 }
 
 @media screen and (max-width: 1024px) {
+    .search-input {
+        font-size: larger;
+    }
+
     .work-detail {
         width: 90%;
     }
@@ -346,11 +350,11 @@ export default {
     }
 
     .search-input {
-        font-size: larger;
+        font-size: large;
     }
 
     .fixes-content {
-        width: 90%;
+        width: 95%;
         padding: 2rem 1rem;
     }
 
@@ -360,6 +364,10 @@ export default {
 
     .rest-detail {
         width: 80%;
+    }
+
+    .fixes-button {
+        font-size: smaller;
     }
 }
 </style>

@@ -7,6 +7,9 @@
             <div class="link-back" v-if="matchesRoute($route.path)">
                 <NuxtLink class="link__all-user" to="/allUser">個人別勤怠一覧</NuxtLink>
             </div>
+            <div class="link-back" v-if="selectsRoute($route.path)">
+                <NuxtLink class="link__employee-registration" to="/employee-registration">従業員登録方法選択</NuxtLink>
+            </div>
             <div class="link-nav">
                 <NuxtLink class="link-admin" to="/admin">メニュー</NuxtLink>
             </div>
@@ -22,6 +25,10 @@ export default {
     methods: {
         matchesRoute(path) {
             const prefixes = ['/monthly/', '/fixes/', '/add/'];
+            return prefixes.some(prefix => path.startsWith(prefix));
+        },
+        selectsRoute(path) {
+            const prefixes = ['/individual', '/bulk'];
             return prefixes.some(prefix => path.startsWith(prefix));
         },
         async logout() {
@@ -61,6 +68,11 @@ export default {
 }
 
 .link__all-user {
+    text-decoration: none;
+    color: #fff;
+}
+
+.link__employee-registration {
     text-decoration: none;
     color: #fff;
 }

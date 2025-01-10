@@ -20,6 +20,11 @@ extend('time_format', value => {
     return regex.test(value) || 'HH:MM:SS の形式で入力してください。';
 });
 
+extend('number_format', value => {
+    const regex = /^\d{5}$/;
+    return regex.test(value) || '社員番号は5桁の数字にしてください';
+});
+
 localize('ja', ja)
 
 Vue.component('ValidationProvider', ValidationProvider)

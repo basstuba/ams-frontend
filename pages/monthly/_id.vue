@@ -187,7 +187,7 @@ export default {
 }
 
 .user-name {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .export-component {
@@ -288,6 +288,15 @@ export default {
 @media screen and (max-width: 820px) {
     .user-name {
         font-size: 2rem;
+    }
+
+    .search-date {
+        font-size: x-large;
+    }
+
+    .before-icon,
+    .after-icon {
+        width: 25%;
     }
 
     .monthly-table {

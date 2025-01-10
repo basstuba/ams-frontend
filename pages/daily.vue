@@ -144,7 +144,7 @@ export default {
 }
 
 .daily-title {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 100;
 }
 
@@ -239,6 +239,15 @@ export default {
 @media screen and (max-width: 820px) {
     .daily-title {
         font-size: 2rem;
+    }
+
+    .search-date {
+        font-size: x-large;
+    }
+
+    .before-icon,
+    .after-icon {
+        width: 25%;
     }
 
     .daily-table {
