@@ -133,4 +133,42 @@ export default {
     color: #FF0202;
     margin: 1rem 0;
 }
+
+@media screen and (max-width: 1024px) {
+    .bulk-content {
+        width: 70%;
+    }
+
+    .bulk-form__item::after {
+        left: 7rem;
+    }
+
+    .item-input {
+        padding: 6rem 0 1rem 12.5rem;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .bulk-content {
+        width: 80%;
+    }
+
+    .bulk-message {
+        font-size: large;
+    }
+
+    .bulk-form__item::after {
+        font-size: medium;
+        top: 2rem;
+        left: 5.5rem;
+    }
+
+    .item-input {
+        padding: 6rem 0 1rem 10rem;
+    }
+
+    .bulk-form__button {
+        font-size: large;
+    }
+}
 </style>
