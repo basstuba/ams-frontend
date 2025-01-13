@@ -35,7 +35,10 @@
                         </div>
                         <div class="error">&emsp;{{ errors[0] }}</div>
                     </validation-provider>
-                    <button class="add-form__button" type="submit">追加</button>
+                    <div class="action-button">
+                        <button class="add-form__button" type="submit">追加</button>
+                        <button class="reset-button" @click="resetForm">表示リセット</button>
+                    </div>
                 </form>
             </validation-observer>
         </div>
@@ -79,7 +82,6 @@ export default {
                     break_total: this.breakTotal
                 });
                 alert(data.message);
-                this.resetForm();
             } catch (error) {
                 if (error.response && error.response.data && error.response.data.error) {
                     alert(`エラーが発生しました: ${error.response.data.error}`);
@@ -93,6 +95,7 @@ export default {
             this.workStart = '';
             this.workEnd = '';
             this.breakTotal = '';
+            alert('入力欄をリセットしました');
         },
     },
     created() {
@@ -154,6 +157,12 @@ export default {
     margin: 0 auto;
 }
 
+.action-button {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
 .add-form__button {
     color: #fff;
     background: linear-gradient(to bottom, #5384FF 30%, #0131A8 90%);
@@ -169,9 +178,29 @@ export default {
     background: linear-gradient(to bottom, #6e97ff 30%, #0041e4 90%);
 }
 
+.reset-button {
+    color: #fff;
+    background: linear-gradient(to bottom, #adadad 30%, #545454 90%);
+    border: none;
+    border-radius: 0.8rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    font-size: large;
+    padding: 0.3rem 1rem;
+    margin: 0 5.5rem 0 1rem;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background: linear-gradient(to bottom, #c9c9c9 30%, #636363 90%);
+}
+
 @media screen and (max-width: 1024px) {
     .add-content {
         width: 80%;
+    }
+
+    .reset-button {
+        margin: 0 6.5rem 0 1rem;
     }
 }
 
@@ -190,6 +219,11 @@ export default {
 
     .add-form__button {
         font-size: large;
+    }
+
+    .reset-button {
+        font-size: smaller;
+        margin: 0 5rem 0 1rem;
     }
 }
 </style>

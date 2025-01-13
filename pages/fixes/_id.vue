@@ -203,7 +203,6 @@ export default {
 }
 
 .search-title {
-    display: block;
     font-size: larger;
     font-weight: bold;
 }

@@ -66,7 +66,10 @@
                         </div>
                         <div class="error">&emsp;{{ errors[0] }}</div>
                     </validation-provider>
-                    <button class="individual-form__button" type="submit">登録</button>
+                    <div class="action-button">
+                        <button class="individual-form__button" type="submit">登録</button>
+                        <button class="reset-button" @click="formReset">表示リセット</button>
+                    </div>
                 </form>
             </validation-observer>
         </div>
@@ -124,7 +127,6 @@ export default {
                     department: this.department,
                 });
                 alert(data.message);
-                this.formReset();
             } catch (error) {
                 if (error.response && error.response.data && error.response.data.error) {
                     alert(`エラーが発生しました: ${error.response.data.error}`);
@@ -140,7 +142,8 @@ export default {
             this.number = '';
             this.role = '';
             this.department = '';
-        }
+            alert('入力欄をリセットしました')
+        },
     },
     created() {
         this.getSelectRole();
@@ -230,6 +233,12 @@ export default {
     text-align: left;
 }
 
+.action-button {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
 .individual-form__button {
     color: #fff;
     background: linear-gradient(to bottom, #5384FF 30%, #0131A8 90%);
@@ -238,6 +247,7 @@ export default {
     box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
     font-size: x-large;
     padding: 0.5rem 4rem;
+    margin-right: 1rem;
     cursor: pointer;
 }
 
@@ -245,10 +255,30 @@ export default {
     background: linear-gradient(to bottom, #6e97ff 30%, #0041e4 90%);
 }
 
+.reset-button {
+    color: #fff;
+    background: linear-gradient(to bottom, #adadad 30%, #545454 90%);
+    border: none;
+    border-radius: 0.8rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem #8d8d8d;
+    font-size: large;
+    padding: 0.3rem 1rem;
+    margin: 0 5rem 0 1rem;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background: linear-gradient(to bottom, #c9c9c9 30%, #636363 90%);
+}
+
 @media screen and (max-width: 1024px) {
     .individual-content {
         width: 70%;
         padding: 2rem;
+    }
+
+    .reset-button {
+        margin: 0 3rem 0 1rem;
     }
 }
 
@@ -274,6 +304,11 @@ export default {
 
     .individual-form__button {
         font-size: large;
+    }
+
+    .reset-button {
+        font-size: smaller;
+        margin: 0 2rem 0 0.5rem;
     }
 }
 </style>
