@@ -127,6 +127,18 @@ export default {
         width: 60%;
         margin: 3rem auto;
     }
+
+    .login-title {
+        font-size: x-large;
+    }
+
+    .item-input {
+        font-size: medium;
+    }
+
+    .login-button {
+        font-size: large;
+    }
 }
 
 @media screen and (max-width: 431px) {
@@ -136,11 +148,15 @@ export default {
 
     .item-input {
         width: 70%;
-        font-size: medium;
+        font-size: smaller;
     }
 
     .error {
         font-size: small;
+    }
+
+    .login-button {
+        font-size: medium;
     }
 }
 
@@ -156,7 +172,7 @@ export default {
     }
 
     .login-title {
-        font-size: x-large;
+        font-size: large;
     }
 }
 </style>

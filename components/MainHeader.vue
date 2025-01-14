@@ -5,7 +5,6 @@
         </div>
         <nav class="header-nav">
             <div class="register-login__nav" v-if="!$auth.loggedIn">
-                <NuxtLink class="link-register" to="/register">新規登録</NuxtLink>
                 <NuxtLink class="link-login" to="/login">ログイン</NuxtLink>
             </div>
             <div class="logout-nav" v-else>
@@ -44,7 +43,6 @@ export default {
     color: #fff;
 }
 
-.link-register,
 .link-login {
     text-decoration: none;
     color: #fff;
@@ -63,7 +61,6 @@ export default {
         font-size: large;
     }
 
-    .link-register,
     .link-login,
     .logout {
         font-size: small;
@@ -81,7 +78,6 @@ export default {
         padding: 1rem 0.5rem;
     }
 
-    .link-register,
     .link-login {
         margin: 0 0.3rem;
     }
