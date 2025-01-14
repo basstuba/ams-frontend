@@ -116,7 +116,7 @@ export default {
     border: none;
     border-radius: 2rem;
     box-shadow: 0.1rem 0.2rem 0.2rem #797979;
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 2rem 0;
     cursor: pointer;
 }
@@ -134,7 +134,7 @@ export default {
     border: none;
     border-radius: 2rem;
     box-shadow: 0.1rem 0.2rem 0.2rem #797979;
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 1rem;
     margin: 0 auto 2.5rem;
     cursor: pointer;
@@ -152,7 +152,7 @@ export default {
     border: none;
     border-radius: 2rem;
     box-shadow: 0.1rem 0.2rem 0.2rem #797979;
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 1rem 0;
     cursor: pointer;
 }
@@ -180,17 +180,24 @@ export default {
     .break-start,
     .break-end,
     .work-end {
-        width: 50%;
+        width: 45%;
+        font-size: x-large;
     }
 }
 
 @media screen and (max-width: 431px) {
-    .work-start,
+    .work-start {
+        width: 55%;
+        border-radius: 1.3rem;
+        font-size: larger;
+        padding: 1rem;
+    }
+
     .break-start,
     .break-end,
     .work-end {
-        width: 60%;
-        font-size: xx-large;
+        width: 55%;
+        font-size: larger;
     }
 }
 
@@ -203,7 +210,7 @@ export default {
     .break-start,
     .break-end,
     .work-end {
-        width: 70%;
+        width: 60%;
     }
 }
 </style>
