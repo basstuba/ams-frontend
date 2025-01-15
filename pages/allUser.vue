@@ -1,6 +1,7 @@
 <template>
     <div class="all-user">
         <h2 class="all-user__title">個人別勤怠一覧</h2>
+        <p class="search-title">条件を指定して検索する</p>
         <div class="search">
             <input class="search-input" type="text" v-model="search.name" placeholder="名前で検索">
             <input class="search-input" type="text" v-model="search.number" placeholder="社員番号で検索">
@@ -167,13 +168,19 @@ export default {
 <style scoped>
 .all-user {
     text-align: center;
-    padding: 2rem;
+    padding: 2rem 2rem 0;
 }
 
 .all-user__title {
     font-size: 2rem;
     font-weight: 100;
     margin-bottom: 1.5rem;
+}
+
+.search-title {
+    color: #4A4A4A;
+    font-size: x-large;
+    margin-bottom: 0.5rem;
 }
 
 .search {
@@ -336,6 +343,10 @@ export default {
 }
 
 @media screen and (max-width: 1024px) {
+    .search-title {
+        font-size: larger;
+    }
+
     .search-input {
         width: 15%;
         font-size: medium;
@@ -392,6 +403,10 @@ export default {
         font-size: 2rem;
     }
 
+    .search-title {
+        font-size: large;
+    }
+
     .search-input {
         width: 17%;
         font-size: small;
@@ -424,7 +439,16 @@ export default {
     .button-detail,
     .button-fixes,
     .button-add {
-        font-size: smaller;
+        font-size: small;
+    }
+
+    .button-detail {
+        padding: 0.3rem 2rem;
+    }
+
+    .button-fixes,
+    .button-add {
+        padding: 0.3rem 1rem;
     }
 
     .data-message {

@@ -4,8 +4,9 @@
         <div class="export-component">
             <Export :exportDate="onTheDay" :exportWorkData="filteredWorks" />
         </div>
+        <p class="search-title">条件を指定して検索する</p>
         <div class="daily-search">
-            <input class="search-input" type="date" v-model="dateSearch" @change="searchDaily">
+            <input class="search-input" type="date" min="2020-01-01" v-model="dateSearch" @change="searchDaily">
             <div class="search-select__wrap">
                 <select class="search-select" v-model="search.role">
                     <option value="">全ての社員区分</option>
@@ -247,6 +248,12 @@ export default {
     text-align: right;
 }
 
+.search-title {
+    color: #4A4A4A;
+    font-size: x-large;
+    margin-bottom: 0.5rem;
+}
+
 .daily-search {
     display: flex;
     justify-content: center;
@@ -399,8 +406,12 @@ export default {
 }
 
 @media screen and (max-width: 1024px) {
+    .search-title {
+        font-size: larger;
+    }
+
     .daily-search {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
     }
 
     .search-input {
@@ -454,8 +465,11 @@ export default {
         font-size: 2rem;
     }
 
+    .search-title {
+        font-size: large;
+    }
+
     .daily-search {
-        margin-top: 1.5rem;
         margin-bottom: 1.5rem;
     }
 
