@@ -4,6 +4,11 @@
         <div class="export-component">
             <Export :exportDate="thisMonth" :exportWorkData="filteredMonthWorks" />
         </div>
+        <div class="monthly-search">
+            <label class="search-title" for="monthlySearchInput">年月を指定して検索する</label>
+            <input class="search-input" type="month" min="2020-01" id="monthlySearchInput" v-model="dateMonth"
+                @change="searchMonthly" pattern="[0-9]{4}-[0-9]{2}" placeholder="YYYY-MM">
+        </div>
         <div class="search">
             <div class="search-date__before">
                 <img class="before-icon" @click="getMonthBefore" src="../../assets/images/left-triangle.png" alt="前月">
@@ -65,6 +70,7 @@ export default {
             filteredMonthWorks: [],
             selectedRests: [],
             isModalOpen: false,
+            dateMonth: '',
         }
     },
     methods: {
@@ -125,6 +131,29 @@ export default {
                 this.getFormattedMonthDate();
                 this.getTotalWorkTime();
                 this.getFilteredMonthWorksData();
+            } catch (error) {
+                if (error.response && error.response.data && error.response.data.error) {
+                    alert(`勤怠一覧の取得に失敗しました: ${error.response.data.error}`);
+                } else {
+                    alert('予期せぬエラーが発生しました');
+                }
+            }
+        },
+        async searchMonthly() {
+            try {
+                const { data } = await this.$axios.post('http://localhost/api/auth/monthly_search', {
+                    user_id: this.$route.params.id,
+                    date_month: this.dateMonth,
+                });
+                this.thisMonth = data.this_month;
+                this.monthBefore = data.month_before;
+                this.monthAfter = data.month_after;
+                this.userData = data.user_data;
+                this.workLists = data.work_lists;
+                this.getFormattedMonthDate();
+                this.getTotalWorkTime();
+                this.getFilteredMonthWorksData();
+                this.dateMonth = '';
             } catch (error) {
                 if (error.response && error.response.data && error.response.data.error) {
                     alert(`勤怠一覧の取得に失敗しました: ${error.response.data.error}`);
@@ -196,6 +225,26 @@ export default {
 .export-component {
     text-align: right;
     margin: 0.5rem 0;
+}
+
+.search-title {
+    display: block;
+    color: #4A4A4A;
+    font-size: x-large;
+    margin-bottom: 0.5rem;
+}
+
+.monthly-search {
+    margin: 0.5rem 0 1rem;
+}
+
+.search-input {
+    width: 15%;
+    border: 0.1rem solid #2563EB;
+    font-size: large;
+    padding: 0.2rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
 }
 
 .search {
@@ -289,6 +338,16 @@ export default {
 }
 
 @media screen and (max-width: 1024px) {
+    .search-title {
+        font-size: larger;
+    }
+
+    .search-input {
+        width: 17%;
+        font-size: medium;
+        padding: 0.2rem 0.5rem;
+    }
+
     .monthly-table {
         width: 90%;
     }
@@ -314,6 +373,15 @@ export default {
 @media screen and (max-width: 820px) {
     .user-name {
         font-size: 2rem;
+    }
+
+    .search-title {
+        font-size: large;
+    }
+
+    .search-input {
+        width: 20%;
+        font-size: smaller;
     }
 
     .search-date {
