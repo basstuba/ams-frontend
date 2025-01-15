@@ -32,7 +32,7 @@
                 </td>
                 <td class="item-detail">{{ work.work_time }}</td>
             </tr>
-            <tr class="total-time">
+            <tr class="total-time" v-if="workLists.length > 0">
                 <th class="title-name">総労働時間</th>
                 <td>&emsp;</td>
                 <td>&emsp;</td>
@@ -41,6 +41,9 @@
                 <td class="total-time__count">{{ totalWorkTime }}</td>
             </tr>
         </table>
+        <div class="data-message" v-if="workLists.length === 0">
+            <p class="message__no-data">該当するデータがありません</p>
+        </div>
         <div class="modal-component">
             <Modal v-if="isModalOpen" :modalRestsData="selectedRests" @close="isModalOpen = false" />
         </div>
@@ -241,16 +244,27 @@ export default {
 }
 
 .item-detail {
-    font-size: x-large;
+    font-size: larger;
     text-align: left;
     border-bottom: 0.1rem solid #252525;
     padding: 0.8rem 0;
 }
 
 .total-time__count {
-    font-size: x-large;
+    font-size: larger;
     text-align: left;
     padding: 0.8rem 0;
+}
+
+.data-message {
+    width: 70%;
+    background-color: #fff;
+    padding: 0.5rem 0;
+    margin: 0 auto;
+}
+
+.message__no-data {
+    font-size: larger;
 }
 
 .modal-open {
@@ -277,6 +291,18 @@ export default {
 @media screen and (max-width: 1024px) {
     .monthly-table {
         width: 90%;
+    }
+
+    .modal-open {
+        font-size: smaller;
+    }
+
+    .data-message {
+        width: 90%;
+    }
+
+    .message__no-data {
+        font-size: large;
     }
 
     .modal-component {
@@ -308,11 +334,23 @@ export default {
     }
 
     .item-detail {
-        font-size: larger;
+        font-size: large;
     }
 
     .total-time__count {
-        font-size: larger;
+        font-size: large;
+    }
+
+    .modal-open {
+        font-size: small;
+    }
+
+    .data-message {
+        width: 100%;
+    }
+
+    .message__no-data {
+        font-size: medium;
     }
 
     .modal-component {

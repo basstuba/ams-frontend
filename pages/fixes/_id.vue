@@ -6,6 +6,7 @@
                 <label class="search-title" for="workSearch">修正する勤務日を入力</label>
                 <input class="search-input" type="date" id="workSearch" @change="submitSearchDate" v-model="searchDate">
             </div>
+            <div class="search__message" v-if="message">{{ message }}</div>
             <div class="work-container" v-for="work in searchWorkData" :key="work.id">
                 <div class="work-detail">
                     <div class="work-data__title">
@@ -105,6 +106,7 @@ export default {
             searchDate: '',
             userData: [],
             searchWorkData: [],
+            message: null,
         };
     },
     methods: {
@@ -128,11 +130,15 @@ export default {
                     user_id: this.userData.id,
                     search_date: this.searchDate
                 });
-                console.log(data.search_work_data);
                 this.searchWorkData = data.search_work_data.map(work => ({
                     ...work,
                     break_total: work.break_total ?? '00:00:00'
                 }));
+                if (this.searchWorkData.length === 0) {
+                    this.message = '該当するデータがありません';
+                } else {
+                    this.message = '';
+                }
             } catch (error) {
                 if (error.response && error.response.data && error.response.data.error) {
                     alert(`勤務日の取得に失敗しました: ${error.response.data.error}`);
@@ -215,6 +221,11 @@ export default {
     padding: 0.3rem 1rem;
     margin: 0.5rem auto;
     cursor: pointer;
+}
+
+.search__message {
+    font-size: large;
+    margin-top: 1rem;
 }
 
 .search-input:focus-visible {
@@ -317,7 +328,11 @@ export default {
 
 @media screen and (max-width: 1024px) {
     .search-input {
-        font-size: larger;
+        font-size: large;
+    }
+
+    .search__message {
+        font-size: medium;
     }
 
     .work-detail {
@@ -345,11 +360,15 @@ export default {
 
 @media screen and (max-width: 820px) {
     .search-title {
-        font-size: large;
+        font-size: medium;
     }
 
     .search-input {
-        font-size: large;
+        font-size: medium;
+    }
+
+    .search__message {
+        font-size: smaller;
     }
 
     .fixes-content {

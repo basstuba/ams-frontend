@@ -15,8 +15,7 @@
             <div class="search-select__wrap">
                 <select class="search-select" v-model="search.department">
                     <option value="">全ての所属部門</option>
-                    <option v-for="department in departments" :key="department.id"
-                        :value="department.department_name">
+                    <option v-for="department in departments" :key="department.id" :value="department.department_name">
                         {{ department.department_name }}
                     </option>
                 </select>
@@ -46,6 +45,9 @@
                 </td>
             </tr>
         </table>
+        <div class="data-message" v-if="getUsers.length === 0">
+            <p class="message__no-data">該当するデータがありません</p>
+        </div>
         <div class="pagination">
             <paginate v-if="(getPageCount > 1)" :page-count="getPageCount" :page-range="3" :margin-pages="2"
                 :prev-text="'&lt;'" :next-text="'&gt;'" :click-handler="clickCallback" :container-class="'paginate'"
@@ -244,7 +246,7 @@ export default {
 .all-user__table {
     width: 70%;
     background-color: #F1F1F1;
-    margin: 1rem auto;
+    margin: 1rem auto 0;
     border-collapse: collapse;
 }
 
@@ -317,6 +319,17 @@ export default {
     background: linear-gradient(to bottom, #ffad60 30%, #ff8800 90%);
 }
 
+.data-message {
+    width: 70%;
+    background-color: #fff;
+    padding: 0.5rem 0;
+    margin: 0 auto;
+}
+
+.message__no-data {
+    font-size: larger;
+}
+
 .pagination {
     width: 30%;
     margin: 1.5rem auto 0;
@@ -364,6 +377,14 @@ export default {
     .button-add {
         font-size: medium;
     }
+
+    .data-message {
+        width: 90%;
+    }
+
+    .message__no-data {
+        font-size: large;
+    }
 }
 
 @media screen and (max-width: 820px) {
@@ -404,6 +425,14 @@ export default {
     .button-fixes,
     .button-add {
         font-size: smaller;
+    }
+
+    .data-message {
+        width: 100%;
+    }
+
+    .message__no-data {
+        font-size: medium;
     }
 }
 </style>
