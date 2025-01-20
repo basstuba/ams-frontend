@@ -43,13 +43,14 @@
                 <th class="title-name">休憩詳細</th>
                 <th class="title-name">勤務時間</th>
             </tr>
-            <tr class="data-item" v-for="work in filteredSearchWorks" :key="work.id">
+            <tr class="data-item" v-for="work in filteredSearchWorks" :key="work.id"
+                :class="{ 'highlighted': selectedWorkId === work.id }">
                 <td class="item-detail">{{ work.user.name }}</td>
                 <td class="item-detail">{{ work.work_start }}</td>
                 <td class="item-detail">{{ work.work_end }}</td>
                 <td class="item-detail">{{ work.break_total }}</td>
                 <td class="item-detail">
-                    <button class="modal-open" @click="openModal(work.rests)">詳細</button>
+                    <button class="modal-open" @click="openModal(work.rests, work.id)">詳細</button>
                 </td>
                 <td class="item-detail">{{ work.work_time }}</td>
             </tr>
@@ -58,7 +59,7 @@
             <p class="message__no-data">該当するデータがありません</p>
         </div>
         <div class="modal-component">
-            <Modal v-if="isModalOpen" :modalRestsData="selectedRests" @close="isModalOpen = false" />
+            <Modal v-if="isModalOpen" :modalRestsData="selectedRests" @close="closeModal" />
         </div>
     </div>
 </template>
@@ -72,6 +73,7 @@ export default {
             onTheDay: null,
             dayBefore: null,
             dayAfter: null,
+            selectedWorkId: null,
             works: [],
             filteredWorks: [],
             isModalOpen: false,
@@ -205,9 +207,14 @@ export default {
             const [year, month, day] = this.onTheDay.split('-');
             this.formattedDay = `${parseInt(month)}月${parseInt(day)}日`;
         },
-        openModal(rests) {
+        openModal(rests, workId) {
             this.selectedRests = rests;
+            this.selectedWorkId = workId;
             this.isModalOpen = true;
+        },
+        closeModal() {
+            this.isModalOpen = false;
+            this.selectedWorkId = null;
         },
         dailyReset() {
             this.dateSearch = '';
@@ -364,6 +371,11 @@ export default {
 
 .data-item {
     background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.data-item.highlighted {
+    background-color: #e2e2e2;
 }
 
 .item-detail {
