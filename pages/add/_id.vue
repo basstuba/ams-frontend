@@ -150,7 +150,7 @@ export default {
 }
 
 .error {
-    width: 70%;
+    width: 80%;
     color: #FF0202;
     font-size: large;
     text-align: left;
@@ -202,6 +202,10 @@ export default {
     .reset-button {
         margin: 0 6.5rem 0 1rem;
     }
+
+    .error {
+        font-size: medium;
+    }
 }
 
 @media screen and (max-width: 820px) {
@@ -224,6 +228,10 @@ export default {
     .reset-button {
         font-size: smaller;
         margin: 0 5rem 0 1rem;
+    }
+
+    .error {
+        font-size: small;
     }
 }
 </style>

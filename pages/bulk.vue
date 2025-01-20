@@ -146,6 +146,10 @@ export default {
     .item-input {
         padding: 6rem 0 1rem 12.5rem;
     }
+
+    .error {
+        font-size: smaller;
+    }
 }
 
 @media screen and (max-width: 820px) {
@@ -169,6 +173,10 @@ export default {
 
     .bulk-form__button {
         font-size: large;
+    }
+
+    .error {
+        font-size: small;
     }
 }
 </style>

@@ -283,6 +283,7 @@ export default {
 
 .error {
     color: #FF0202;
+    font-size: small;
 }
 
 .fixes-button {
@@ -356,6 +357,10 @@ export default {
     .rest-data__item-input {
         width: 80%;
     }
+
+    .error {
+        font-size: x-small;
+    }
 }
 
 @media screen and (max-width: 820px) {
@@ -386,6 +391,10 @@ export default {
 
     .fixes-button {
         font-size: smaller;
+    }
+
+    .error {
+        font-size: xx-small;
     }
 }
 </style>

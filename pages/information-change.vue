@@ -330,6 +330,16 @@ export default {
     .search-input {
         width: 50%;
     }
+
+    .search-error,
+    .error {
+        font-size: smaller;
+    }
+
+    .display-name,
+    .item-name {
+        font-size: larger;
+    }
 }
 
 @media screen and (max-width: 820px) {
@@ -367,6 +377,11 @@ export default {
 
     .main-form__button {
         font-size: large;
+    }
+
+    .search-error,
+    .error {
+        font-size: small;
     }
 }
 </style>

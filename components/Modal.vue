@@ -70,4 +70,32 @@ export default {
     border-bottom: 0.1rem solid #252525;
     padding: 0.5rem 0;
 }
+
+@media screen and (max-width: 1024px) {
+    .modal-button__close {
+        font-size: smaller;
+    }
+
+    .title-name {
+        font-size: large;
+    }
+
+    .item-detail {
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .modal-button__close {
+        font-size: x-small;
+    }
+
+    .title-name {
+        font-size: smaller;
+    }
+
+    .item-detail {
+        font-size: small;
+    }
+}
 </style>

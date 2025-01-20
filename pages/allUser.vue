@@ -50,11 +50,11 @@
             <p class="message__no-data">該当するデータがありません</p>
         </div>
         <div class="pagination">
-            <paginate v-if="(getPageCount > 1)" :page-count="getPageCount" :page-range="3" :margin-pages="2"
-                :prev-text="'&lt;'" :next-text="'&gt;'" :click-handler="clickCallback" :container-class="'paginate'"
-                :page-class="'page-item'" :page-link-class="'page-item__link'" :active-class="'page-active__item'"
-                :prev-class="'prev-item'" :prev-link-class="'prev-item__link'" :next-class="'next-item'"
-                :next-link-class="'next-item__link'">
+            <paginate v-if="(getPageCount > 1)" :forced-page="currentPage" :value="currentPage"
+                :page-count="getPageCount" :page-range="3" :margin-pages="2" :prev-text="'&lt;'" :next-text="'&gt;'"
+                :click-handler="clickCallback" :container-class="'paginate'" :page-class="'page-item'"
+                :page-link-class="'page-item__link'" :active-class="'page-active__item'" :prev-class="'prev-item'"
+                :prev-link-class="'prev-item__link'" :next-class="'next-item'" :next-link-class="'next-item__link'">
             </paginate>
         </div>
     </div>
@@ -77,6 +77,16 @@ export default {
                 department: '',
             },
         };
+    },
+    watch: {
+        search: {
+            handler() {
+                this.$nextTick(() => {
+                    this.currentPage = 1;
+                });
+            },
+            deep: true,
+        }
     },
     methods: {
         async getUsersData() {
@@ -118,12 +128,15 @@ export default {
             }
         },
         searchReset() {
-            this.search = {
-                name: '',
-                number: '',
-                role: '',
-                department: '',
-            };
+            this.currentPage = 1;
+            this.$nextTick(() => {
+                this.search = {
+                    name: '',
+                    number: '',
+                    role: '',
+                    department: '',
+                };
+            });
         },
         linkWorkConfirm(id) {
             this.$router.push(`/monthly/${id}`);
